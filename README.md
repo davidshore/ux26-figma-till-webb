@@ -26,6 +26,18 @@ npm run dev
 
 Jämför webbsidan med Figma. Dra fönstret från smalt till brett och kontrollera text, mellanrum och läsordning. Prova en egen ändring i CSS och spara. Om Figma inte kan läsas, kontrollera att båda länkarna öppnas med samma Figma-konto. Du kan också bifoga exporterade PNG-bilder av kortet och skriva din layoutregel.
 
+## Lägg till en sida från Figma
+
+En sida har en egen adress. För att lägga till exempelvis `/bokning` skapar du en fil i `src/routes`. TanStack Router kopplar filen till adressen när du kör projektet. Återanvändbara delar, till exempel ett workshopkort, ligger i `src/components`.
+
+Kopiera länkarna till sidans mobil- och datorram i Figma. Byt ut hakparenteserna och klistra in i Copilot:
+
+> Läs mina två ramar via Figma MCP. Mobil: [länk]. Dator: [länk]. På sidan ska besökaren kunna [uppgift]. När bredden minskar ska [min layoutregel]. Beskriv först hur du tolkar läsordningen och layouten. Vänta på mitt svar.
+>
+> När jag godkänt tolkningen, skapa bokningssidan på `/bokning` i `src/routes/bokning.jsx`. Följ mönstret i `admin.jsx`. Lägg till en länk från hemsidan till bokningssidan och bygg den första sektionen med projektets komponenter och CSS.
+
+Klicka på länken från hemsidan, ladda om bokningssidan och prova webbläsarens bakåtknapp. Dra fönstret från smalt till brett och jämför med Figma. Efter publicering, öppna Vercel-adressen med `/bokning` direkt i en ny flik och ladda om.
+
 ## Hitta i projektet
 
 | Det du vill ändra | Öppna |
@@ -33,7 +45,7 @@ Jämför webbsidan med Figma. Dra fönstret från smalt till brett och kontrolle
 | Kortets innehåll och struktur | `src/components/WorkshopCard.jsx` |
 | Kortets layout | `src/components/WorkshopCard.css` |
 | Gemensamma färger, textstorlekar och avstånd | `src/styles.css` |
-| Hemsidan och adminsidan | `src/pages/Home.jsx` och `src/pages/Admin.jsx` |
+| Hemsidan och adminsidan | `src/routes/index.jsx` och `src/routes/admin.jsx` |
 
 ## Prova kortet i Storybook
 
