@@ -16,11 +16,29 @@ npm run dev
 
 Öppna länken efter **Local** i terminalen. När du ser **Fotoworkshopen**, klicka på **Om workshopen** för att fälla ut texten. Låt terminalen vara öppen. Nästa gång räcker det att öppna projektmappen och köra `npm run dev`.
 
+## Koppla Copilot till Figma
+
+Öppna **Copilot Chat** i VS Code, logga in med ditt GitHub-konto och välj **Agent**. Du kan börja med Copilot Free medan du väntar på studentåtkomst. [Ansök om GitHub Education](https://github.com/settings/education/benefits).
+
+Startprojektet innehåller anslutningen till Figmas MCP-server. Tryck **F1** och välj **MCP: List Servers**. Om du ser **figma**, välj den och sedan **Start Server**. När webbläsaren öppnas, logga in med det Figma-konto som kan öppna din design och godkänn anslutningen.
+
+### Om figma saknas i listan
+
+1. Tryck **F1** i VS Code, välj **MCP: Add Server** och sedan **HTTP**.
+2. Klistra in `https://mcp.figma.com/mcp` som serveradress. Tryck **Enter**, ange `figma` som namn och välj **Workspace** för att spara anslutningen i ditt projekt.
+3. Tryck **F1** och välj **MCP: List Servers → figma → Start Server**. Följ inloggningen i webbläsaren och ge VS Code tillgång till Figma. [Figmas installationsguide för VS Code](https://help.figma.com/hc/en-us/articles/39890361040535-VS-Code-and-Figma-Set-up-the-MCP-server)
+
+### Testa anslutningen
+
+Markera en ram som innehåller en rubrik i Figma. Högerklicka och välj **Copy link to selection**. Klistra in länken i den här frågan i Copilot Chat:
+
+> Läs den här ramen med Figma MCP och berätta vilken rubrik den har: [klistra in länken].
+
+Jämför svaret med rubriken i Figma. Om Copilot inte kan läsa ramen, kontrollera att servern körs och att du kan öppna länken med samma Figma-konto som du använde i VS Code.
+
 ## Bygg ett kort från Figma
 
-1. Öppna Copilot Chat i VS Code och logga in med ditt GitHub-konto. Du kan börja med Copilot Free och [ansöka om GitHub Education](https://github.com/settings/education/benefits).
-2. Projektet innehåller Figma-anslutningen. Tryck **F1**, välj **MCP: List Servers → figma → Start Server**. Godkänn anslutningen och logga in med det Figma-konto som kan öppna din design när du får frågan.
-3. Markera ditt kort i Figma och välj **Copy link to selection** i snabbmenyn. Öppna **Agent** i Copilot Chat. Byt ut hakparenteserna i exemplet mot dina länkar och din layoutregel.
+Markera kortet i mobilramen och välj **Copy link to selection**. Gör samma sak i datorramen. Byt ut hakparenteserna i exemplet mot dina länkar och din layoutregel.
 
 > Läs kortet via Figma MCP. Mobil: [länk]. Dator: [länk]. Bygg min version av WorkshopCard så att den visas på hemsidan. På mobil ska [min layoutregel]. Använd projektets CSS och behåll möjligheten att prova lång text i Storybook. Berätta vilka filer du ändrade.
 
